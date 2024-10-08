@@ -28,7 +28,7 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
         }
       }
     )
-  }, [delay])
+  }, [])
 
   return <div ref={sectionRef}>{children}</div>
 }
