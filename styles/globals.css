@@ -58,3 +58,49 @@ body {
     animation-delay: 4s;
   }
 }
+
+.prism {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  width: 100px; /* Base width of the triangle */
+  height: 100px; /* Height of the triangle */
+  opacity: 0.8; /* Slight transparency for better visual */
+}
+
+.face1 {
+  background-color: red;
+  transform: rotateY(0deg) translateZ(50px); /* Front face */
+}
+
+.face2 {
+  background-color: green;
+  transform: rotateY(120deg) translateZ(50px); /* Left face */
+}
+
+.face3 {
+  background-color: blue;
+  transform: rotateY(240deg) translateZ(50px); /* Right face */
+}
+
+.base1,
+.base2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: gray; /* Base color */
+  transform: translateZ(-50px); /* Position behind */
+}
+
+.base1 {
+  transform: rotateY(0deg) translateZ(-50px); /* Bottom base */
+}
+
+.base2 {
+  transform: rotateY(120deg) translateZ(-50px); /* Back base */
+}

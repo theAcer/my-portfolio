@@ -5,29 +5,28 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import RotatingTrianglePrism from '../components/rotatingPrism';
 
-
-// Ensure GSAP plugins are registered
 gsap.registerPlugin(ScrollTrigger)
 
 // Project data
 const projects = [
   {
-    title: "E-commerce Backend",
-    description: "A scalable backend system for a large e-commerce platform, handling millions of transactions daily.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "Redis"],
+    title: "B2C Climate Risk Tool",
+    description: "Developed for Adapta.Earth, this tool leverages Azure for climate risk assessment, enabling farmers and financial institutions to make informed decisions.",
+    technologies: ["Azure", "Stripe", "PowerApps", "Python"],
     image: "/placeholder.svg"
   },
   {
-    title: "Real-time Chat Application",
-    description: "A WebSocket-based chat application with features like user authentication and message persistence.",
-    technologies: ["Socket.io", "Express", "MongoDB", "React"],
+    title: "Payment Integration and E-commerce Backend",
+    description: "Backend systems for e-commerce platforms, integrating MPESA and Stripe, and optimizing server-side performance.",
+    technologies: ["MPESA API", "Python", "Stripe", "Digital Ocean"],
     image: "/placeholder.svg"
   },
   {
-    title: "API Gateway",
-    description: "A robust API gateway that handles routing, rate limiting, and authentication for microservices.",
-    technologies: ["Node.js", "Express", "Redis", "Docker"],
+    title: "Generative AI for Language Translation",
+    description: "Implemented Azure OpenAI Studio for real-time language translation, expanding accessibility in climate risk tools.",
+    technologies: ["Azure OpenAI", "Python", "Generative AI"],
     image: "/placeholder.svg"
   }
 ]
@@ -93,8 +92,11 @@ export default function Home() {
       <section className="bg-gray-100 py-20">
         <div className="container mx-auto px-4">
           <div className="hero-content text-center">
-            <h1 className="text-5xl font-bold mb-4">Your Name</h1>
-            <p className="text-xl mb-8">Backend Engineer | Node.js Expert | System Architect</p>
+          <div className="flex justify-center mt-10">
+          <RotatingTrianglePrism />
+          </div>
+            <h1 className="text-5xl font-bold mb-4">Samson Njogu</h1>
+            <p className="text-xl mb-8">Software Engineer | Full-Stack Developer | Climate Adaptation Tools Expert</p>
             <Link href="#contact" className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition-colors">
               Get in Touch
             </Link>
@@ -109,22 +111,21 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             <Image
               src="/placeholder.svg"
-              alt="Your Name"
+              alt="Samson Njogu"
               width={300}
               height={300}
               className="rounded-full"
             />
             <div>
               <p className="mb-4">
-                I'm a passionate backend engineer with X years of experience in building scalable and efficient systems.
-                My expertise lies in Node.js, Express, and database technologies like PostgreSQL and MongoDB.
+                I'm a passionate software engineer with over X years of experience in developing scalable systems, specializing in climate adaptation tools, generative AI, and cloud technologies.
               </p>
               <p className="mb-4">
-                When I'm not coding, you can find me hiking in the mountains, reading tech blogs, or experimenting with new programming languages.
+                My background includes leveraging Azure OpenAI for language translation, building APIs with Python, and securing systems with Azure Firewall and Microsoft Sentinel.
               </p>
               <h3 className="text-xl font-semibold mb-2">Skills</h3>
               <div className="flex flex-wrap gap-2">
-                {['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS', 'GraphQL', 'Redis'].map((skill) => (
+                {['Python', 'Azure', 'Django', 'TypeScript', 'CI/CD', 'PowerApps', 'Azure Firewall', 'Generative AI'].map((skill) => (
                   <span key={skill} className="bg-gray-200 px-3 py-1 rounded-full">{skill}</span>
                 ))}
               </div>
@@ -163,36 +164,18 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
           <form className="max-w-lg mx-auto">
             <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <label htmlFor="name" className="block text-gray-700">Name</label>
+              <input type="text" id="name" className="w-full px-4 py-2 border rounded-lg" />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <label htmlFor="email" className="block text-gray-700">Email</label>
+              <input type="email" id="email" className="w-full px-4 py-2 border rounded-lg" />
             </div>
             <div className="mb-4">
-              <label htmlFor="message" className="block text-gray-700 font-bold mb-2">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
+              <label htmlFor="message" className="block text-gray-700">Message</label>
+              <textarea id="message" className="w-full px-4 py-2 border rounded-lg" rows={4}></textarea>
             </div>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
+            <button type="submit" className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
               Send Message
             </button>
           </form>
